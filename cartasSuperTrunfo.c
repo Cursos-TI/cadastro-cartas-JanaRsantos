@@ -1,66 +1,97 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Carta
-{
-  char estado[2];
-  char codigo[4];
-  char cidade[50];
-  int populacao;
-  float area;
-  float pib;
-  int pontoTuristico;
-};
-
 int main() {
-  struct Carta cartas[2];
+  /*Carta 1*/
+    char estado_1;
+    char codigo_1[4];
+    char cidade_1[50];
+    int populacao_1;
+    float area_1;
+    float pib_1;
+    int pontos_1;
+    
+    /*Carta 2*/
+    char estado_2;
+    char codigo_2[4];
+    char cidade_2[50];
+    int populacao_2;
+    float area_2;
+    float pib_2;
+    int pontos_2;
 
-  for (int i = 0; i < 2; i++)
-  {
+    printf("=== Cadastro cartas ===\n\n");
 
-    printf("=== Cadastro de cartas %d ===\n", i + 1);
+    /*Leitura carta 1*/
+    printf("Cadastro carta 1\n");
 
-    printf("Digite o Estado (Uma letra de 'A' a 'H'): ");
-    scanf("%2s", cartas[i].estado);
-    getchar();
+    printf("Estado (A a H): ");
+    scanf(" %c", &estado_1);
 
-    printf("Digite o Codigo (Letra do estado seguida de um número de 01 a 04 (ex: A01, B03)): ");
-    scanf("%4s", cartas[i].codigo);
-    getchar();
+    printf("Código da carta (ex: A01): ");
+    scanf("%s", codigo_1);
 
-    printf("Digite a Cidade: ");
-    fgets(cartas[i].cidade, 50, stdin);
-    cartas[i].cidade[strcspn(cartas[i].cidade, "\n")] = '\0';
+    printf("Cidade: ");
+    scanf("%s", cidade_1);
 
-    printf("Digite a Populacao: ");
-    scanf("%d", &cartas[i].populacao);
+    printf("População: ");
+    scanf("%d", &populacao_1); 
 
-    printf("Digite a Area: ");
-    scanf("%f", &cartas[i].area);
+    printf("Area (km²): ");
+    scanf("%f", &area_1);
 
-    printf("Digite o PIB: ");
-    scanf("%f", &cartas[i].pib);
+    printf("PIB: ");
+    scanf("%f", &pib_1);
 
-    printf("Digite a quantidade de pontos turisticos: ");
-    scanf("%d", &cartas[i].pontoTuristico);
+    printf("Número de pontos Turísticos: ");
+    scanf("%d", &pontos_1);
 
-    getchar();
-
-    printf("\n---------------------------\n\n");
-  }
-
-  printf("=== CARTAS CADASTRADAS ===\n");
-
-  for (int i = 0; i < 2; i++)
-  {
-    printf("\n--- Carta %d ---\n", i + 1);
-    printf("Estado: %s\n", cartas[i].estado);
-    printf("Codigo: %s\n", cartas[i].codigo);
-    printf("Cidade: %s\n", cartas[i].cidade);
-    printf("Populacao: %d\n", cartas[i].populacao);
-    printf("Area: %.2f\n", cartas[i].area);
-    printf("PIB: %.2f\n", cartas[i].pib);
-    printf("Pontos turisticos: %d\n", cartas[i].pontoTuristico);
     printf("\n--------------------------------\n\n");
-  }
-} 
+
+    /*Leitura carta 2*/
+    printf("Cadastro carta 1\n");
+
+    printf("Estado (A a H): ");
+    scanf(" %c", &estado_2);
+
+    printf("Código da carta (ex: A01): ");
+    scanf("%s", codigo_2);
+
+    printf("Cidade: ");
+    scanf("%s", cidade_2);
+
+    printf("População: ");
+    scanf("%d", &populacao_2); 
+
+    printf("Area (km²): ");
+    scanf("%f", &area_2);
+
+    printf("PIB: ");
+    scanf("%f", &pib_2);
+
+    printf("Número de pontos Turísticos: ");
+    scanf("%d", &pontos_2);
+
+
+    printf("\n=== CARTAS CADASTRADAS ===\n\n");
+
+    printf("Carta 1:\n");
+    printf("Estado: %c\n", estado_1);
+    printf("Codigo: %s\n", codigo_1);
+    printf("Nome da Cidade: %s\n", cidade_1);
+    printf("Populacao: %d\n", populacao_1);
+    printf("Area: %.2f km²\n", area_1);
+    printf("PIB: %.2f\n", pib_1);
+    printf("Numero de Pontos Turisticos: %d\n\n", pontos_1);
+
+    printf("Carta 2:\n");
+    printf("Estado: %c\n", estado_2);
+    printf("Codigo: %s\n", codigo_2);
+    printf("Nome da Cidade: %s\n", cidade_2);
+    printf("Populacao: %d\n", populacao_2);
+    printf("Area: %.2f km²\n", area_2);
+    printf("PIB: %.2f\n", pib_2);
+    printf("Numero de Pontos Turisticos: %d\n", pontos_2);
+
+    return 0;
+}
